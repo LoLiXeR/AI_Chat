@@ -12,7 +12,7 @@ from app.pages.router import router as page_router
 async def lifespan(app: FastAPI):
     await chroma_vectorstore.init()
     app.include_router(api_router, prefix="/api", tags=["API"])
-    app.include_router(page_router, tags=["ФРОНТ"])
+    app.include_router(page_router, tags=["frontpidors"])
     app.mount("/static", StaticFiles(directory="app/static"), name="static")
     yield
     await chroma_vectorstore.close()
