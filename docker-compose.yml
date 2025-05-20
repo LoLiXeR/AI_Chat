@@ -1,0 +1,15 @@
+# docker-compose.yml
+
+services:
+  chat_backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+      - ./data:/app/data
+    environment:
+      - AITUNNEL_API_KEY=sk-aitunnel-DxkYUsJQ0XL5HMk2VnWYo1SXkQwTFuUZ
+      - SECRET_KEY=6_Vvhwtf9gbZMdgwvOgCsLJplShWZmtHSwz-qbR_Ggc
+    env_file:
+      - .env
